@@ -112,6 +112,7 @@ export default {
   },
   data() {
     return {
+      valid: true,
       boolPublisher: true,
       desserts: [],
       publisherString:'',
@@ -225,11 +226,13 @@ export default {
           alert('Server error');
     },
     saveData() { 
-      if(this.userName !== '') {
+      
+      console.log(this.valid);
+      if(this.userName !== '' && this.valid === true) {
         this.inputData();
       }
       else {
-        alert('You should input information');
+        alert('You should input correct information');
       }        
     },
     reset() {

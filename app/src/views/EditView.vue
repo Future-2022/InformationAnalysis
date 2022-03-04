@@ -134,25 +134,30 @@ import axios from 'axios';
     //     value.toString().toLocaleUpperCase().indexOf(search) !== -1
     // },
     async edit_item() {
-      const sendingData = { 
-          id: this.$route.params.id,
-          name: this.userName, 
-          url: this.userUrl, 
-          stringRead: this.stringRead, 
-          stringUpdate: this.stringUpdate, 
-          stringReport: this.stringReport, 
-          address: this.address, 
-          publisher: this.publisher, 
-          accountName: this.accountName, 
-      };
-      const response = await axios.post("http://localhost:5000/api/users/editData", sendingData);
-      console.log(response);
-      if(response.status === 200) {
-          alert('Edit user data successfully!');
-          window.location.href = '#/about';
+      if(this.valid === true) {
+          const sendingData = { 
+              id: this.$route.params.id,
+              name: this.userName, 
+              url: this.userUrl, 
+              stringRead: this.stringRead, 
+              stringUpdate: this.stringUpdate, 
+              stringReport: this.stringReport, 
+              address: this.address, 
+              publisher: this.publisher, 
+              accountName: this.accountName, 
+          };
+          const response = await axios.post("http://localhost:5000/api/users/editData", sendingData);
+          console.log(response);
+          if(response.status === 200) {
+              alert('Edit user data successfully!');
+              window.location.href = '#/about';
+          }
+          else
+              alert('Server error');
       }
-      else
-          alert('Server error');
+      else {
+        alert('You should input correct information');
+      }  
     },
     delete_item(id) {
       const sendingData = { 
@@ -186,6 +191,7 @@ import axios from 'axios';
   },
     data () {
       return {
+        valid: true,
         boolPublisher: true,
         userName: '',
         userUrl: '',
