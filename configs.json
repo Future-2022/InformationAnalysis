@@ -8,13 +8,13 @@
     "urlScreen": [
         {
             "id": "1",
-            "name": "Eeadfffff",
-            "url": "localhost/Eduleads/fffffffffff"
+            "name": "sdfsf",
+            "url": "werwe/wdgdfg"
         },
         {
             "id": "2",
-            "name": "namedd3444",
-            "url": "st/Eduleads/4354544444"
+            "name": "werwer",
+            "url": "vxvsfd"
         }
     ],
     "connectStringCommon": "SERVER=10.0.1.7;DATABASE=CommonData;User ID=AppVault;Password=appvault;",
@@ -25,25 +25,25 @@
     "virtualApps": [
         {
             "id": "1",
-            "name": "Eeadfffff",
-            "baseURL": "http://localhost/Eduleads/fffffffffff",
+            "name": "sdfsf",
+            "baseURL": "http://werwe/wdgdfg",
             "connectStringRead": "fffffSERVER=10.0.1.7;DATABASE=Eduleads;UserID=lm;Password=lm345;MultipleActiveResultSets=True",
             "connectStringUpdate": "ffffffSERVER=10.0.1.7;DATABASE=Eduleads;UserID=lm;Password=lm345;MultipleActiveResultSets=True",
             "connectStringReport": "ffffffff=10.0.1.7;DATABASE=Eduleads;UserID=lm;Password=lm345;MultipleActiveResultSets=True",
             "defaultFromAddress": "fffffffnotify@skilldrum.com",
-            "defaultPublisher": "ffff62EE7D3A-4C33-4AF1-9AE3-32FEBD3A2C69",
-            "popAccountName": "ffffffffResume"
+            "defaultPublisher": "asdf",
+            "popAccountName": "sdfwrwerw"
         },
         {
             "id": "2",
-            "name": "namedd3444",
-            "baseURL": "http://st/Eduleads/4354544444",
-            "connectStringRead": "4455444444",
-            "connectStringUpdate": "read34544444",
-            "connectStringReport": "update11111111",
-            "defaultFromAddress": "address@add.ress345444444",
-            "defaultPublisher": "publisherwr2344444",
-            "popAccountName": "account444444444"
+            "name": "werwer",
+            "baseURL": "http://vxvsfd",
+            "connectStringRead": "sfd",
+            "connectStringUpdate": "wrewer",
+            "connectStringReport": "sfwersf",
+            "defaultFromAddress": "sdfsafd@fsdf.wer",
+            "defaultPublisher": "asdfgg",
+            "popAccountName": "shfghgn"
         }
     ]
 }

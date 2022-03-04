@@ -193,14 +193,21 @@ export default {
       this.accountName = event.target.value;
     },
     publisherConfirm(v) {
-      let temp = this.desserts.map((item) => {
-        if(item.defaultPublisher === v) {
+      console.log(v)
+      // let temp = this.desserts.map((item) => {
+      //   if(item.defaultPublisher === v) {
+      //     this.boolPublisher = false;
+      //     return false;
+      //   }
+      // });
+      this.boolPublisher = true;
+      for (var i  = 0; i <this.desserts.length; i++) {
+        console.log(this.desserts[i].defaultPublisher)
+        if(this.desserts[i].defaultPublisher === v) {
           this.boolPublisher = false;
-          return false;
+          break;
         }
-        this.boolPublisher = true;
-      });
-      console.log(temp);
+      }
       return this.boolPublisher;
     },
     async inputData() {

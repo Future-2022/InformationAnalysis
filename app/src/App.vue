@@ -20,15 +20,15 @@
             </v-icon>
             Detail information
           </router-link>
-          <div class='text-white'>|</div>
-          <router-link to="/edit" class='mx-5'>
-            <v-icon
+          <!-- <div class='text-white'>|</div> -->
+          <!-- <router-link to="/edit" class='mx-5'> -->
+            <!-- <v-icon
               class='align-self-center text-white px-2'
             >
               mdi-wrench
-            </v-icon>
-            Edit Data
-          </router-link>
+            </v-icon> -->
+            <!-- Edit Data -->
+          <!-- </router-link> -->
         </div>
       </div>
     </nav>

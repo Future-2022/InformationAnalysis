@@ -173,17 +173,19 @@ import axios from 'axios';
       })
     },
     publisherConfirm(v) {
-      console.log(this.desserts);
-      let temp = this.desserts.map((item) => {
-        if(item.defaultPublisher === v) {
-          this.boolPublisher = false;
-          return false;
+      console.log(v)
+      this.boolPublisher = true;
+      for (var i  = 0; i <this.desserts.length; i++) {
+        console.log(this.desserts[i].defaultPublisher)
+        if(i != this.$route.params.id - 1) {         
+        
+          if(this.desserts[i].defaultPublisher === v) {
+            this.boolPublisher = false;
+            break;
+          }
         }
-        this.boolPublisher = true;
-      });
-        console.log(this.boolPublisher);
-        console.log(temp);
-        return this.boolPublisher;
+      }
+      return this.boolPublisher;
     },
     cancel() {
       window.location.href = '#/about';
