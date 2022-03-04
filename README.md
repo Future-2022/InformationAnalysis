@@ -390,7 +390,7 @@ Once merged you can push to heroku as above and your site will rebuild and be up
 
 ### Author
 
-Brad Traversy
+Aliev Vladyslav
 [Traversy Media](http://www.traversymedia.com)
 
 ### Version
