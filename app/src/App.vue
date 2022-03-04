@@ -25,7 +25,7 @@
             <v-icon
               class='align-self-center text-white px-2'
             >
-              mdi-edit
+              mdi-wrench
             </v-icon>
             Edit Data
           </router-link>
