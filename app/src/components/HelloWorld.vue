@@ -11,74 +11,72 @@
           large
           class='text-blue align-self-center'
         >
-          mdi-account
+          mdi-folder-move
         </v-icon>
-        <h4 class='px-3 text-blue align-self-center pb-0 mb-0 info-text'>User information input</h4>
+        <h4 class='px-3 text-blue align-self-center pb-0 mb-0 info-text'>Input Data</h4>
       </div>
       <v-text-field
         v-model="userName"
         :rules="nameRules"
-        label="User Name"
+        label="name"
         required
       ></v-text-field>
 
       <v-text-field
         v-model="userUrl"
         :rules="addressRules"
-        label="User Url"
+        label="baseUrl"
         required
       ></v-text-field>
 
       <v-text-field
         v-model="stringRead"
         :rules="sReadRules"
-        label="String Read"
+        label="connectStringRead"
         required
       ></v-text-field>
 
       <v-text-field
         v-model="stringUpdate"
         :rules="sUpdateRules"
-        label="String Update"
+        label="connectStringUpdate"
         required
       ></v-text-field>
 
       <v-text-field
         v-model="stringReport"
         :rules="sReportRules"
-        label="String Report"
+        label="connectStringReport"
         required
       ></v-text-field>
 
       <v-text-field
         v-model="address"
-        :rules="emailRules"
-        label="Address"
+        :rules="urlRules"
+        label="defaultFromAddress"
         required
       ></v-text-field>
 
       <v-text-field
         v-model="publisher"
         :rules="publisherRules"
-        label="Publisher"
+        label="defaultPublisher"
         required
       ></v-text-field>
 
       <v-text-field
         v-model="accountName"
         :rules="accountRules"
-        label="Account Name"
+        label="popAccountName"
         required
       ></v-text-field>
       
-      
-
       <v-btn
         color="success"
         class="mr-4 confirm text-transform-none"
         @click="saveData"
       >
-        Input data
+        Save Data
       </v-btn>
 
       <v-btn
@@ -86,7 +84,7 @@
         class="reset text-transform-none"
         @click="reset"
       >
-        Reset
+        Reset Fields
       </v-btn>
     </v-form>
   </div>
@@ -96,7 +94,7 @@
 import axios from "axios";
 import './index.css';
 export default {
-  name: 'HelloWorld',
+  name: 'DataInput',
   props: {
     msg: String
   },
@@ -125,44 +123,45 @@ export default {
       publisher: '',
       accountName: '',
       nameRules: [
-        v => !!v || 'Name is required',
-        v => (v && v.length <= 10) || 'Name Contains must be less than 10 characters',
-        v => v.indexOf(' ') < 0 || 'Name Contains white space.',
+        v => !!v || 'name is required',
+    //    v => (v && v.length <= 10) || 'Name must be less than 10 characters',
+        v => v.indexOf(' ') < 0 || 'name Contains white space.',
       ],
-      emailRules: [
-        v => !!v || 'Address is required',
-        v => /.+@.+\..+/.test(v) || 'Address must be valid',
-        v => v.indexOf(' ') < 0 || 'Address Contains white space.',
+      urlRules: [
+        v => !!v || 'baseUrl is required',
+        v => (/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/).test(v) || 'baseUrl must be valid',
+        v => v.indexOf(' ') < 0 || 'baseUrl Contains white space.',
       ],
       sReadRules: [
-        v => !!v || 'String Read is required',
-        v => v.indexOf(' ') < 0 || 'String Read Contains white space.',
+        v => !!v || 'connectStringRead is required',
+        v => v.indexOf(' ') < 0 || 'connectStringRead Contains white space.',
       ],
       sUpdateRules: [
-        v => !!v || 'String Update is required',
-        v => v.indexOf(' ') < 0 || 'String Update Contains white space.',
+        v => !!v || 'connectStringUpdate is required',
+        v => v.indexOf(' ') < 0 || 'connectStringUpdate Contains white space.',
       ],
       sReportRules: [
-        v => !!v || 'String Report is required',
-        v => v.indexOf(' ') < 0 || 'String Report Contains white space.',
+        v => !!v || 'connectStringReport is required',
+        v => v.indexOf(' ') < 0 || 'connectStringReport Contains white space.',
       ],
       addressRules: [
-        v => !!v || 'Url is required',
-        v => v.indexOf(' ') < 0 || 'Url Contains white space.',
+        v => !!v || 'defaultFromAddress is required',
+        v => v.indexOf(' ') < 0 || 'defaultFromAddress Contains white space.',
       ],
       // publisherRules: [
-      //   v => !!v || 'Publisher is required',
-      //   v => this.publisherString.indexOf(v) < 0 || 'Publisher contains is not unique.',
-      //   v => v.indexOf(' ') < 0 || 'Publisher Contains white space.',
+      //   v => !!v || 'defaultPublisher is required',
+      //   v => this.publisherString.indexOf(v) < 0 || 'defaultPublisher is not unique.',
+      //   v => v.indexOf(' ') < 0 || 'defaultPublisher Contains white space.',
       // ],
       publisherRules: [
-        v => !!v || 'Publisher is required',
-        v => this.publisherConfirm(v) !== false || 'Publisher contains is not unique.',
-        v => v.indexOf(' ') < 0 || 'Publisher Contains white space.',
+        v => !!v || 'defaultPublisher is required',
+        v => (/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/).test(v) || 'defaultPublisher needs to be a valid guid',
+        v => this.publisherConfirm(v) !== false || 'defaultPublisher contains is not unique.',
+        v => v.indexOf(' ') < 0 || 'defaultPublisher Contains white space.',
       ],
       accountRules: [
-        v => !!v || 'Account is required',
-        v => v.indexOf(' ') < 0 || 'Account Contains white space.',
+        v => !!v || 'popAccountName is required',
+        v => v.indexOf(' ') < 0 || 'popAccountName Contains white space.',
       ],
     }
   },
@@ -172,6 +171,7 @@ export default {
       this.userName = event.target.value;
     },
     setUserUrl(event) {
+      alert(event.target.value)
       this.userUrl = event.target.value;
     },
     setStringRead(event) {
@@ -211,7 +211,6 @@ export default {
       return this.boolPublisher;
     },
     async inputData() {
-    console.log('start');
       // POST request using axios with async/await
       const sendingData = { 
           name: this.userName, 
@@ -226,20 +225,19 @@ export default {
       const response = await axios.post("http://localhost:5000/api/users/inputData", sendingData);
       console.log(response);
       if(response.status === 200) {
-          alert('Save user data successfully!');
+          alert('Successfully Saved The Data!');
           window.location.reload();
       }
       else
           alert('Server error');
     },
     saveData() { 
-      
       console.log(this.valid);
       if(this.userName !== '' && this.valid === true) {
         this.inputData();
       }
       else {
-        alert('You should input correct information');
+        alert('Input Correct Information');
       }        
     },
     reset() {

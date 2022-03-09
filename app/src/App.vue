@@ -12,23 +12,15 @@
             Input data
           </router-link> 
           <div class='text-white'>|</div>
-          <router-link to="/about" class='mx-5'>
+          <router-link to="/info" class='mx-5'>
             <v-icon
               class='align-self-center text-white px-2'
             >
               mdi-database
             </v-icon>
-            Detail information
+            Data Information
           </router-link>
-          <!-- <div class='text-white'>|</div> -->
-          <!-- <router-link to="/edit" class='mx-5'> -->
-            <!-- <v-icon
-              class='align-self-center text-white px-2'
-            >
-              mdi-wrench
-            </v-icon> -->
-            <!-- Edit Data -->
-          <!-- </router-link> -->
+          
         </div>
       </div>
     </nav>
