@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const fs = require('fs');
 const config = require('../../configs.json');
-// const configUrl = './configs.json';
 const data = fs.readFileSync('./configs.json'); // Read config.json
 const configJson = JSON.parse(data); // Parse Json
 
@@ -10,7 +9,6 @@ const configJson = JSON.parse(data); // Parse Json
 //   if (err) throw err;
 //   const configJson = JSON.parse(data);
 // });
-
 
 router.get(
   '/getInfo',
@@ -81,6 +79,7 @@ router.post(
         defaultPublisher: publisher,
         popAccountName: accountName,
       });
+      
       await fs.writeFileSync('./configs.json', JSON.stringify(configJson, null, 4)); // The 4 parameter signifys 4 white spaces
       res.send({'msg':'Success'});
     } catch (err) {
@@ -96,12 +95,12 @@ router.post(
     const { id } = req.body;
     try {
       console.log('--id', id);
-      const selItem1 = configJson.virtualApps.findIndex(x => x.id === id);
-      if (selItem1 !== undefined) configJson.virtualApps.splice(selItem1, 1);
+      const selectItem1 = configJson.virtualApps.findIndex(x => x.id === id);
+      if (selectItem1 !== undefined) configJson.virtualApps.splice(selectItem1, 1);
 
-      const selItem2 = configJson.urlScreen.findIndex(x => x.id === id);
-      if (selItem2 !== undefined) configJson.urlScreen.splice(selItem2, 1);
-      console.log(selItem1);
+      const selectItem2 = configJson.urlScreen.findIndex(x => x.id === id);
+      if (selectItem2 !== undefined) configJson.urlScreen.splice(selectItem2, 1);
+      console.log(selectItem1);
       await fs.writeFileSync('./configs.json', JSON.stringify(configJson, null, 4));
       res.send({'msg':'Success'});
     } catch (err) {
@@ -116,8 +115,8 @@ router.post(
     const { id } = req.body;
     try {
       console.log('--id', id);
-      const selItem = configJson.virtualApps.find(x => x.id == id);
-      res.send({'selItem': selItem});
+      const selectItem = configJson.virtualApps.find(x => x.id == id);
+      res.send({'selectItem': selectItem});
     } catch (err) {
       console.error(err.message);
       res.status(500).send('Server error');

@@ -7,14 +7,39 @@
     "encryptIV": "85bae29f-cc42-4363-8e8d-78804a482614",
     "urlScreen": [
         {
-            "id": "1",
-            "name": "sdfsf",
-            "url": "werwe/wdgdfg"
+            "id": 2,
+            "name": "02usavrms",
+            "url": "localhost/rmsweb"
         },
         {
-            "id": "2",
-            "name": "werwer",
-            "url": "vxvsfd"
+            "id": 3,
+            "name": "Target",
+            "url": "localhost/Target"
+        },
+        {
+            "id": 4,
+            "name": "sd",
+            "url": "qa.skilldrum.com"
+        },
+        {
+            "id": 5,
+            "name": "sd",
+            "url": "localhost/api"
+        },
+        {
+            "id": 6,
+            "name": "rmspub",
+            "url": "localhost/rmspub"
+        },
+        {
+            "id": "7",
+            "name": "testest",
+            "url": "testest"
+        },
+        {
+            "id": "8",
+            "name": "test",
+            "url": "test"
         }
     ],
     "connectStringCommon": "SERVER=10.0.1.7;DATABASE=CommonData;User ID=AppVault;Password=appvault;",
@@ -24,26 +49,81 @@
     "useSnapshot": false,
     "virtualApps": [
         {
-            "id": "1",
-            "name": "sdfsf",
-            "baseURL": "http://werwe/wdgdfg",
-            "connectStringRead": "fffffSERVER=10.0.1.7;DATABASE=Eduleads;UserID=lm;Password=lm345;MultipleActiveResultSets=True",
-            "connectStringUpdate": "ffffffSERVER=10.0.1.7;DATABASE=Eduleads;UserID=lm;Password=lm345;MultipleActiveResultSets=True",
-            "connectStringReport": "ffffffff=10.0.1.7;DATABASE=Eduleads;UserID=lm;Password=lm345;MultipleActiveResultSets=True",
-            "defaultFromAddress": "fffffffnotify@skilldrum.com",
-            "defaultPublisher": "asdf",
-            "popAccountName": "sdfwrwerw"
+            "id": 2,
+            "name": "02usavrms",
+            "baseURL": "http://localhost/rmsweb/",
+            "connectStringRead": "server=10.2.2.201;MultipleActiveResultSets=True;uid=lm;pwd=lm345;encrypt=true;database=DemoUS;TrustServerCertificate=true;",
+            "connectStringUpdate": "server=10.2.2.201;MultipleActiveResultSets=True;uid=lm;pwd=lm345;encrypt=true;database=DemoUS;TrustServerCertificate=true;",
+            "connectStringReport": "server=10.2.2.201;MultipleActiveResultSets=True;uid=lm;pwd=lm345;encrypt=true;database=DemoUS;TrustServerCertificate=true;",
+            "defaultFromAddress": "notify@appvault.com",
+            "defaultPublisher": "cd93d533-0843-469d-af31-4b50bad05ee5",
+            "popAccountName": "02usav"
         },
         {
-            "id": "2",
-            "name": "werwer",
-            "baseURL": "http://vxvsfd",
-            "connectStringRead": "sfd",
-            "connectStringUpdate": "wrewer",
-            "connectStringReport": "sfwersf",
-            "defaultFromAddress": "sdfsafd@fsdf.wer",
-            "defaultPublisher": "asdfgg",
-            "popAccountName": "shfghgn"
+            "id": 3,
+            "name": "Target",
+            "baseURL": "http://localhost/Target/",
+            "connectStringRead": "SERVER=10.0.1.7;DATABASE=tc;User ID=lm;Password=lm345;MultipleActiveResultSets=True",
+            "connectStringUpdate": "SERVER=10.0.1.7;DATABASE=tc;User ID=lm;Password=lm345;MultipleActiveResultSets=True",
+            "connectStringReport": "SERVER=10.0.1.7;DATABASE=tc;User ID=lm;Password=lm345;MultipleActiveResultSets=True",
+            "defaultFromAddress": "notify@skilldrum.com",
+            "defaultPublisher": "5C357FA9-D644-40C4-B85C-7152EDA84D0F",
+            "popAccountName": "target"
+        },
+        {
+            "id": 4,
+            "name": "sd",
+            "baseURL": "http://qa.skilldrum.com/",
+            "connectStringRead": "SERVER=10.0.1.7;DATABASE=tc;User ID=lm;Password=lm345;MultipleActiveResultSets=True",
+            "connectStringUpdate": "SERVER=10.0.1.7;DATABASE=tc;User ID=lm;Password=lm345;MultipleActiveResultSets=True",
+            "connectStringReport": "SERVER=10.0.1.7;DATABASE=tc;User ID=lm;Password=lm345;MultipleActiveResultSets=True",
+            "defaultFromAddress": "notify@skilldrum.com",
+            "defaultPublisher": "5C357FA9-D644-40C4-B85C-7152EDA84D0F",
+            "popAccountName": "target"
+        },
+        {
+            "id": 5,
+            "name": "rmspub",
+            "baseURL": "http://localhost/rmspub/",
+            "connectStringRead": "SERVER=10.0.1.7;DATABASE=TC;User ID=lm;Password=lm345;MultipleActiveResultSets=True",
+            "connectStringUpdate": "SERVER=10.0.1.7;DATABASE=TC;User ID=lm;Password=lm345;MultipleActiveResultSets=True",
+            "connectStringReport": "SERVER=10.0.1.7;DATABASE=TC;User ID=lm;Password=lm345;MultipleActiveResultSets=True",
+            "defaultFromAddress": "notify@skilldrum.com",
+            "defaultPublisher": "C11B94F4-F6C5-48AC-B0DB-9C8A2F9EDA86",
+            "popAccountName": "poppub"
+        },
+        {
+            "id": 6,
+            "name": "cokelibertyrms",
+            "baseURL": "https://useast.appvault.com/cokeliberty/",
+            "connectStringRead": "server=10.2.2.201;MultipleActiveResultSets=True;uid=lm;pwd=lm345;encrypt=true;database=CokeLiberty;TrustServerCertificate=true;",
+            "connectStringUpdate": "server=10.2.2.201;MultipleActiveResultSets=True;uid=lm;pwd=lm345;encrypt=true;database=CokeLiberty;TrustServerCertificate=true;",
+            "connectStringReport": "server=10.2.2.201;MultipleActiveResultSets=True;uid=lm;pwd=lm345;encrypt=true;database=CokeLiberty;TrustServerCertificate=true;",
+            "defaultFromAddress": "notify@appvault.com",
+            "defaultPublisher": "6A397961-8346-4300-8872-8AA0B1568E9D",
+            "popAccountName": "cokeliberty"
+        },
+        {
+            "id": "7",
+            "name": "testest",
+            "baseURL": "http://testest",
+            "connectStringRead": "test",
+            "connectStringUpdate": "test",
+            "connectStringReport": "test",
+            "defaultFromAddress": "test@test.test",
+            "defaultPublisher": "6A397961-8346-4300-8872-8AA0B1568E88",
+            "popAccountName": "test"
+        },
+        {
+            "id": "8",
+            "name": "test",
+            "baseURL": "http://test",
+            "connectStringRead": "test",
+            "connectStringUpdate": "test",
+            "connectStringReport": "test",
+            "defaultFromAddress": "test@test.test",
+            "defaultPublisher": "6A397961-8346-4300-8872-8AA0B1568E9A",
+            "popAccountName": "test"
         }
     ]
 }

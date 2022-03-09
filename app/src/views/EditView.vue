@@ -13,12 +13,12 @@
         >
           mdi-account
         </v-icon>
-        <h4 class='px-3 text-blue align-self-center pb-0 mb-0 info-text'>User information input</h4>
+        <h4 class='px-3 text-blue align-self-center pb-0 mb-0 info-text'>Data Input</h4>
       </div>
       <v-text-field
         v-model="userName"
         :rules="nameRules"
-        label="User Name"
+        label="name"
         value="False"
         required
       ></v-text-field>
@@ -26,60 +26,59 @@
       <v-text-field
         v-model="userUrl"
         :rules="addressRules"
-        label="User Url"
+        label="baseUrl"
         required
       ></v-text-field>
 
       <v-text-field
         v-model="stringRead"
         :rules="sReadRules"
-        label="String Read"
+        label="connectStringRead"
         required
       ></v-text-field>
 
       <v-text-field
         v-model="stringUpdate"
         :rules="sUpdateRules"
-        label="String Update"
+        label="connectStringUpdate"
         required
       ></v-text-field>
 
       <v-text-field
         v-model="stringReport"
         :rules="sReportRules"
-        label="String Report"
+        label="connectStringReport"
         required
       ></v-text-field>
 
       <v-text-field
         v-model="address"
-        :rules="emailRules"
-        label="Address"
+        :rules="urlRules"
+        label="defaultFromAddress"
         required
       ></v-text-field>
 
       <v-text-field
         v-model="publisher"
         :rules="publisherRules"
-        label="Publisher"
+        label="defaultPublisher"
         required
       ></v-text-field>
 
       <v-text-field
         v-model="accountName"
         :rules="accountRules"
-        label="Account Name"
+        label="popAccountName"
         required
       ></v-text-field>
-      
-      
+
 
       <v-btn
         color="success"
         class="mr-4 confirm text-transform-none"
         @click="edit_item"
       >
-        Save data
+        Save Data
       </v-btn>
 
       <v-btn
@@ -87,7 +86,7 @@
         class="reset text-transform-none"
         @click="cancel"
       >
-        cancel
+        Cancel
       </v-btn>
     </v-form>
   </div>
@@ -104,17 +103,17 @@ import axios from 'axios';
       .post("http://localhost:5000/api/users/getInfoById", sendingData)
       .then((response)=>
       {
-        const url = response.data.selItem.baseURL.substring(7);
+        const url = response.data.selectItem.baseURL.substring(7);
 
-        console.log(response.data.selItem);
-        this.userName = response.data.selItem.name;
+        console.log(response.data.selectItem);
+        this.userName = response.data.selectItem.name;
         this.userUrl = url;
-        this.stringRead = response.data.selItem.connectStringRead;
-        this.stringUpdate = response.data.selItem.connectStringUpdate;
-        this.stringReport = response.data.selItem.connectStringReport;
-        this.address = response.data.selItem.defaultFromAddress;
-        this.publisher = response.data.selItem.defaultPublisher;
-        this.accountName = response.data.selItem.popAccountName;
+        this.stringRead = response.data.selectItem.connectStringRead;
+        this.stringUpdate = response.data.selectItem.connectStringUpdate;
+        this.stringReport = response.data.selectItem.connectStringReport;
+        this.address = response.data.selectItem.defaultFromAddress;
+        this.publisher = response.data.selectItem.defaultPublisher;
+        this.accountName = response.data.selectItem.popAccountName;
       })
 
       axios
@@ -134,6 +133,7 @@ import axios from 'axios';
     //     value.toString().toLocaleUpperCase().indexOf(search) !== -1
     // },
     async edit_item() {
+
       if(this.valid === true) {
           const sendingData = { 
               id: this.$route.params.id,
@@ -149,17 +149,47 @@ import axios from 'axios';
           const response = await axios.post("http://localhost:5000/api/users/editData", sendingData);
           console.log(response);
           if(response.status === 200) {
-              alert('Edit user data successfully!');
-              window.location.href = '#/about';
+              alert('Edit Data Was Successfull!');
+              window.location.href = '#/info';
           }
           else
               alert('Server error');
       }
       else {
-        alert('You should input correct information');
+        alert('Input Correct Information');
       }  
     },
+
+    async copy_item(){
+
+      if(this.valid === true) {
+          const sendingData = { 
+              id: this.$route.params.id,
+              name: this.userName, 
+              url: this.userUrl, 
+              stringRead: this.stringRead, 
+              stringUpdate: this.stringUpdate, 
+              stringReport: this.stringReport, 
+              address: this.address, 
+              publisher: this.publisher, 
+              accountName: this.accountName, 
+          };
+          const response = await axios.post("http://localhost:5000/api/users/copyData", sendingData);
+          console.log(response);
+          if(response.status === 200) {
+              alert('Edit Data Was Successfull!');
+              window.location.href = '#/info';
+          }
+          else
+              alert('Server error');
+      }
+      else {
+        alert('Input Correct Information');
+      }  
+    },
+
     delete_item(id) {
+
       const sendingData = { 
           id:id 
       };
@@ -172,6 +202,7 @@ import axios from 'axios';
         window.location.reload();
       })
     },
+
     publisherConfirm(v) {
       console.log(v)
       this.boolPublisher = true;
@@ -187,10 +218,12 @@ import axios from 'axios';
       }
       return this.boolPublisher;
     },
+
     cancel() {
-      window.location.href = '#/about';
+      window.location.href = '#/info';
     }
   },
+
     data () {
       return {
         valid: true,
@@ -203,76 +236,70 @@ import axios from 'axios';
         address: '',
         publisher: '',
         accountName: '',
-        headers1: [          
+        headers1: [
           { text: 'Setting', value: 'setting', sortable: false, },
           { text: 'ID', value: 'id', sortable: false, },
           {
-            text: 'User Name',
+            text: 'name',
             align: 'start',
             sortable: false,
             value: 'name',
           },          
-          { text: 'User Url', value: 'baseURL' },
-          { text: 'String Read', value: 'connectStringRead' },
-          { text: 'String Update', value: 'connectStringUpdate' },
-          { text: 'String Report', value: 'connectStringReport' },
-          { text: 'Address', value: 'defaultFromAddress' },
-          { text: 'Publisher', value: 'defaultPublisher' },
-          { text: 'Account', value: 'popAccountName', sortable: false},
+          { text: 'baseUrl', value: 'baseURL' },
+          { text: 'connectStringRead', value: 'connectStringRead' },
+          { text: 'connectStringUpdate', value: 'connectStringUpdate' },
+          { text: 'connectStringReport', value: 'connectStringReport' },
+          { text: 'defaultFromAddress', value: 'defaultFromAddress' },
+          { text: 'defaultPublisher', value: 'defaultPublisher' },
+          { text: 'popAccountName', value: 'popAccountName', sortable: false},
         ],
         headers2: [
           { text: 'ID', value: 'id', sortable: false, },
           {
-            text: 'User Name',
+            text: 'name',
             align: 'start',
             sortable: false,
             value: 'name',
           },          
-          { text: 'User Url', value: 'url' }
+          { text: 'baseUrl', value: 'url' }
         ],
         desserts: [],
         nameRules: [
-        v => !!v || 'Name is required',
-        v => (v && v.length <= 10) || 'Name Contains must be less than 10 characters',
-        v => v.indexOf(' ') < 0 || 'Name Contains white space.',
+        v => !!v || 'name is required',
+        // v => v.indexOf(' ') < 0 || 'name Contains white space.',
       ],
-      emailRules: [
-        v => !!v || 'Address is required',
-        v => /.+@.+\..+/.test(v) || 'Address must be valid',
-        v => v.indexOf(' ') < 0 || 'Address Contains white space.',
+      urlRules: [
+        v => !!v || 'baseUrl is required',
+        v => (/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/).test(v) || 'baseUrl must be valid',
+        v => v.indexOf(' ') < 0 || 'baseUrl Contains white space.',
       ],
       sReadRules: [
-        v => !!v || 'String Read is required',
-        v => v.indexOf(' ') < 0 || 'String Read Contains white space.',
+        v => !!v || 'connectStringRead is required',
+        // v => v.indexOf(' ') < 0 || 'connectStringRead Contains white space.',
       ],
       sUpdateRules: [
-        v => !!v || 'String Update is required',
-        v => v.indexOf(' ') < 0 || 'String Update Contains white space.',
+        v => !!v || 'connectStringUpdate is required',
+        // v => v.indexOf(' ') < 0 || 'connectStringUpdate Contains white space.',
       ],
       sReportRules: [
-        v => !!v || 'String Report is required',
-        v => v.indexOf(' ') < 0 || 'String Report Contains white space.',
+        v => !!v || 'connectStringReport is required',
+       //  v => v.indexOf(' ') < 0 || 'connectStringReport Contains white space.',
       ],
       addressRules: [
-        v => !!v || 'Url is required',
-        v => v.indexOf(' ') < 0 || 'Url Contains white space.',
+        v => !!v || 'defaultFromAddress is required',
+        v => v.indexOf(' ') < 0 || 'defaultFromAddress Contains white space.',
       ],
-      // publisherRules: [
-      //   v => !!v || 'Publisher is required',
-      //   v => this.publisherString.indexOf(v) < 0 || 'Publisher contains is not unique.',
-      //   v => v.indexOf(' ') < 0 || 'Publisher Contains white space.',
-      // ],
       publisherRules: [
-        v => !!v || 'Publisher is required',
-        v => this.publisherConfirm(v) !== false || 'Publisher contains is not unique.',
-        v => v.indexOf(' ') < 0 || 'Publisher Contains white space.',
+        v => !!v || 'defaultPublisher is required',
+        v => (/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/).test(v) || 'defaultPublisher needs to be a valid guid',
+        v => this.publisherConfirm(v) !== false || 'defaultPublisher contains is not unique.',
+        v => v.indexOf(' ') < 0 || 'defaultPublisher Contains white space.',
       ],
       accountRules: [
-        v => !!v || 'Account is required',
-        v => v.indexOf(' ') < 0 || 'Account Contains white space.',
+        v => !!v || 'popAccountName is required',
+        // v => v.indexOf(' ') < 0 || 'popAccountName Contains white space.',
       ],
-      
-      }
-    },
+    }
   }
+}
 </script>

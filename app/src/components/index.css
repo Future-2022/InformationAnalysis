@@ -12,9 +12,6 @@
   width: 800px;
   display: inline-block;
 }
-.text-red {
-  
-}
 .text-warnings {
   color: rgb(255, 102, 0);
 }
@@ -46,9 +43,6 @@ table {
 thead {
   background-color: #c5e0ef!important;
 }
-/* .table2 thead {
-  background-color: #ff5252;
-} */
 .text-icon1 {
   color: #fc9520c9!important;
 }
@@ -65,5 +59,10 @@ thead {
 }
 .red-btn {
   background-color:rgba(226, 77, 19, 0.829)!important;
+  color: white!important;
+}
+
+.green-btn {
+  background-color: rgb(17, 202, 116) !important;
   color: white!important;
 }
