@@ -7,14 +7,24 @@
     "encryptIV": "85bae29f-cc42-4363-8e8d-78804a482614",
     "urlScreen": [
         {
-            "id": "1",
-            "name": "sdfsf",
-            "url": "werwe/wdgdfg"
+            "id": 1,
+            "name": "sdfsdf",
+            "url": "sdfsd/sdfs"
+        },
+        {
+            "id": 0,
+            "name": "sdfsdfee",
+            "url": "sdfsd/sdfs"
         },
         {
             "id": 2,
-            "name": "secret",
-            "url": "ffff/bbb"
+            "name": "eeeee",
+            "url": "sdfsd/sdfs"
+        },
+        {
+            "id": 3,
+            "name": "ggg",
+            "url": "sdfsd/sdfs"
         }
     ],
     "connectStringCommon": "SERVER=10.0.1.7;DATABASE=CommonData;User ID=AppVault;Password=appvault;",
@@ -24,26 +34,48 @@
     "useSnapshot": false,
     "virtualApps": [
         {
-            "id": "1",
-            "name": "sdfsf",
-            "baseURL": "http://werwe/wdgdfg",
-            "connectStringRead": "fffffSERVER=10.0.1.7;DATABASE=Eduleads;UserID=lm;Password=lm345;MultipleActiveResultSets=True",
-            "connectStringUpdate": "ffffffSERVER=10.0.1.7;DATABASE=Eduleads;UserID=lm;Password=lm345;MultipleActiveResultSets=True",
-            "connectStringReport": "ffffffff=10.0.1.7;DATABASE=Eduleads;UserID=lm;Password=lm345;MultipleActiveResultSets=True",
-            "defaultFromAddress": "fffffffnotify@skilldrum.com",
-            "defaultPublisher": "asdf",
-            "popAccountName": "sdfwrwerw"
+            "id": 1,
+            "name": "sdfsdf",
+            "baseURL": "http://sdfsd/sdfs",
+            "connectStringRead": "wer",
+            "connectStringUpdate": "sdf",
+            "connectStringReport": "wre",
+            "defaultFromAddress": "sdf@fsd.wer",
+            "defaultPublisher": "fsdf",
+            "popAccountName": "wer"
         },
         {
             "id": 2,
-            "name": "secret",
-            "baseURL": "http://ffff/bbb",
-            "connectStringRead": "fffffSERVER=10.0.1.7;DATABASE=Eduleads;UserID=lm;Password=lm345;MultipleActiveResultSets=True",
-            "connectStringUpdate": "ffffffSERVER=10.0.1.7;DATABASE=Eduleads;UserID=lm;Password=lm345;MultipleActiveResultSets=True",
-            "connectStringReport": "ffffffff=10.0.1.7;DATABASE=Eduleads;UserID=lm;Password=lm345;MultipleActiveResultSets=True",
-            "defaultFromAddress": "fffffffnotify@skilldrum.com",
-            "defaultPublisher": "asdf",
-            "popAccountName": "sdfwrwerw"
+            "name": "eeeee",
+            "baseURL": "http://sdfsd/sdfs",
+            "connectStringRead": "wer",
+            "connectStringUpdate": "sdf",
+            "connectStringReport": "wre",
+            "defaultFromAddress": "sdf@fsd.wer",
+            "defaultPublisher": "fsdfeefee",
+            "popAccountName": "wer"
+        },
+        {
+            "id": 3,
+            "name": "ggg",
+            "baseURL": "http://sdfsd/sdfs",
+            "connectStringRead": "wer",
+            "connectStringUpdate": "sdf",
+            "connectStringReport": "wre",
+            "defaultFromAddress": "sdf@fsd.wer",
+            "defaultPublisher": "fsdfeefeeee",
+            "popAccountName": "wer"
+        },
+        {
+            "id": 4,
+            "name": "eeee",
+            "baseURL": "http://sdfsd/sdfs",
+            "connectStringRead": "wer",
+            "connectStringUpdate": "sdf",
+            "connectStringReport": "wre",
+            "defaultFromAddress": "sdf@fsd.wer",
+            "defaultPublisher": "fsdfeeg",
+            "popAccountName": "wer"
         }
     ]
 }

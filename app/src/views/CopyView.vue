@@ -163,14 +163,13 @@ import axios from 'axios';
       console.log(v)
       this.boolPublisher = true;
       for (var i  = 0; i <this.desserts.length; i++) {
-        console.log(this.desserts[i].defaultPublisher)
-        if(i != this.$route.params.id - 1) {         
+        console.log(this.desserts[i].defaultPublisher)     
         
           if(this.desserts[i].defaultPublisher === v) {
             this.boolPublisher = false;
             break;
           }
-        }
+        
       }
       return this.boolPublisher;
     },

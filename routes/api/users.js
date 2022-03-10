@@ -66,12 +66,12 @@ router.post(
 
       const index = configJson.virtualApps.findIndex(x => x.id == id);
       configJson.urlScreen.splice(index, 1, {
-        id: id,
+        id: parseInt(id),
         name: name,
         url: url
       });
       configJson.virtualApps.splice(index, 1, {
-        id: id,
+        id: parseInt(id),
         name: name,
         baseURL: 'http://' + url,
         connectStringRead: stringRead,
@@ -137,6 +137,18 @@ router.post(
       const selItem2 = configJson.urlScreen.findIndex(x => x.id === id);
       if (selItem2 !== undefined) configJson.urlScreen.splice(selItem2, 1);
       console.log(selItem1);
+
+      for(var i = 0; i < configJson.virtualApps.length; i++) {
+        if(i >= id-1) {
+          configJson.virtualApps[i].id = configJson.virtualApps[i].id-1;
+        }
+      }
+      for(var i = 0; i < configJson.urlScreen.length; i++) {
+        if(i >= id-1) {
+          configJson.urlScreen[i].id = configJson.urlScreen[i].id-1;
+        }
+      }
+
       await fs.writeFileSync('./configs.json', JSON.stringify(configJson, null, 4));
       res.send({'msg':'Success'});
     } catch (err) {
