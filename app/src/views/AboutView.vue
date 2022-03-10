@@ -46,7 +46,14 @@
           </v-btn>
           <v-btn
             block  
-            class='red-btn w-50'          
+            class='black-btn w-50'          
+            @click="copy_item(item.id)"
+          >
+            copy
+          </v-btn>
+          <v-btn
+            block  
+            class='red-btn w-50 mt-2'          
             @click="delete_item(item.id)"
           >
             delete
@@ -80,6 +87,9 @@ import axios from 'axios';
     // },
     edit_item(id) {
       window.location.href = '#/edit/' + id;
+    },
+    copy_item(id) {
+      window.location.href = '#/copy/' + id;
     },
     delete_item(id) {
       const sendingData = { 

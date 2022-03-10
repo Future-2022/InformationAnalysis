@@ -12,9 +12,9 @@
             "url": "werwe/wdgdfg"
         },
         {
-            "id": "2",
-            "name": "werwer",
-            "url": "vxvsfd"
+            "id": 2,
+            "name": "secret",
+            "url": "ffff/bbb"
         }
     ],
     "connectStringCommon": "SERVER=10.0.1.7;DATABASE=CommonData;User ID=AppVault;Password=appvault;",
@@ -35,15 +35,15 @@
             "popAccountName": "sdfwrwerw"
         },
         {
-            "id": "2",
-            "name": "werwer",
-            "baseURL": "http://vxvsfd",
-            "connectStringRead": "sfd",
-            "connectStringUpdate": "wrewer",
-            "connectStringReport": "sfwersf",
-            "defaultFromAddress": "sdfsafd@fsdf.wer",
-            "defaultPublisher": "asdfgg",
-            "popAccountName": "shfghgn"
+            "id": 2,
+            "name": "secret",
+            "baseURL": "http://ffff/bbb",
+            "connectStringRead": "fffffSERVER=10.0.1.7;DATABASE=Eduleads;UserID=lm;Password=lm345;MultipleActiveResultSets=True",
+            "connectStringUpdate": "ffffffSERVER=10.0.1.7;DATABASE=Eduleads;UserID=lm;Password=lm345;MultipleActiveResultSets=True",
+            "connectStringReport": "ffffffff=10.0.1.7;DATABASE=Eduleads;UserID=lm;Password=lm345;MultipleActiveResultSets=True",
+            "defaultFromAddress": "fffffffnotify@skilldrum.com",
+            "defaultPublisher": "asdf",
+            "popAccountName": "sdfwrwerw"
         }
     ]
 }

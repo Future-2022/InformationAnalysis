@@ -67,3 +67,7 @@ thead {
   background-color:rgba(226, 77, 19, 0.829)!important;
   color: white!important;
 }
+.black-btn {
+  background-color: rgb(68, 68, 68)!important;
+  color: white!important;
+}

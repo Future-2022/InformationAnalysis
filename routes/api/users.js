@@ -91,6 +91,41 @@ router.post(
 );
 
 router.post(
+  '/copyData',
+  async (req, res) => {
+    const {id, name, url, address, stringRead, stringUpdate,
+          stringReport, publisher, accountName} = req.body;
+          
+    try {
+      console.log(req.body);
+      const id = configJson.urlScreen.length + 1;
+      const index = configJson.virtualApps.findIndex(x => x.id == id);
+      configJson.urlScreen.push({
+        id: id,
+        name: name,
+        url: url
+      });
+      configJson.virtualApps.push({
+        id: id,
+        name: name,
+        baseURL: 'http://' + url,
+        connectStringRead: stringRead,
+        connectStringUpdate: stringUpdate,
+        connectStringReport: stringReport,
+        defaultFromAddress: address,
+        defaultPublisher: publisher,
+        popAccountName: accountName,
+      });
+      await fs.writeFileSync('./configs.json', JSON.stringify(configJson, null, 4)); // The 4 parameter signifys 4 white spaces
+      res.send({'msg':'Success'});
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send('Server error');
+    }
+  }
+);
+
+router.post(
   '/deleteItem',
   async (req, res) => {
     const { id } = req.body;
