@@ -15,7 +15,15 @@
       :items="desserts2"
       :items-per-page="5"
       class="elevation-1 px-3 py-2 table-1"
+      :search="search"
     >
+      <template v-slot:top>
+        <v-text-field
+          v-model="search"
+          label="Search (You can search all fields.)"
+          class="mx-4"
+        ></v-text-field>
+      </template>
     </v-data-table>
   </div>
 
@@ -34,7 +42,15 @@
       :items="desserts1"
       :items-per-page="5"
       class="elevation-1 px-3 py-2 table-2"
+      :search="search1"
     >    
+      <template v-slot:top>
+        <v-text-field
+          v-model="search1"
+          label="Search (You can search all fields.)"
+          class="mx-4"
+        ></v-text-field>
+      </template>
       <template v-slot:[`item.setting`]="{ item }">
         <div class=''>
           <v-btn
@@ -79,12 +95,6 @@ import axios from 'axios';
       })
   },
   methods: {
-    // filterOnlyCapsText (value, search) {
-    //   return value != null &&
-    //     search != null &&
-    //     typeof value === 'string' &&
-    //     value.toString().toLocaleUpperCase().indexOf(search) !== -1
-    // },
     edit_item(id) {
       window.location.href = '#/edit/' + id;
     },
@@ -107,6 +117,8 @@ import axios from 'axios';
   },
     data () {
       return {
+        search: '',
+        search1: '',
         headers1: [          
           { text: 'Setting', value: 'setting', sortable: false, },
           { text: 'ID', value: 'id', sortable: false, },
