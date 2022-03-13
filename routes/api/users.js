@@ -171,5 +171,23 @@ router.post(
     }
   }
 );
+router.get(
+  '/newCreateJSON',
+  async (req, res) => {
+    try {
+      for(var i = 0; i < configJson.urlScreen.length; i++) {
+        delete configJson.urlScreen[i].id;
+      }
+      for(var i = 0; i < configJson.virtualApps.length; i++) {
+        delete configJson.virtualApps[i].id;
+      }
+      await fs.writeFileSync('./newConfigs.json', JSON.stringify(configJson, null, 4)); // The 4 parameter signifys 4 white spaces
+      res.send({'msg':'Success'});
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send('Server error');
+    }
+  }
+);
 
 module.exports = router;

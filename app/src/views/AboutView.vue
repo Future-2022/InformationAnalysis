@@ -1,5 +1,13 @@
 <template>
 <div>
+  <div class='text-right'>
+    <v-btn
+      class='bluedark-btn'          
+      @click="export_newJson()"
+    >
+      Export JSON
+    </v-btn>
+  </div>
   <div class='text-left pt-5'>
     <div class='d-flex'>
       <v-icon
@@ -95,6 +103,15 @@ import axios from 'axios';
       })
   },
   methods: {
+    export_newJson() {
+      axios
+      .get("http://localhost:5000/api/users/newCreateJSON")
+      .then((response)=>
+      {
+        console.log(response);
+        alert("New JSON file is successfully created!");
+      })
+    },
     edit_item(id) {
       window.location.href = '#/edit/' + id;
     },

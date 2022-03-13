@@ -70,4 +70,21 @@ thead {
 .black-btn {
   background-color: rgb(68, 68, 68)!important;
   color: white!important;
+  text-transform: none!important;
+}
+.white-btn {
+  color: rgb(18, 116, 245)!important;
+  background-color: white!important;
+  /* font-weight: bold; */
+  text-transform: none!important;
+}
+.bluedark-btn {
+  background-color: rgb(55 114 192)!important;
+  color: white!important;
+  /* font-weight: bold; */
+  text-transform: none!important;
+}
+.text-right {
+  text-align: right;
+  margin-right: 20px;
 }

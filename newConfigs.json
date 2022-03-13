@@ -7,22 +7,18 @@
     "encryptIV": "85bae29f-cc42-4363-8e8d-78804a482614",
     "urlScreen": [
         {
-            "id": 1,
             "name": "sdfsdf",
             "url": "sdfsd/sdfs"
         },
         {
-            "id": 2,
             "name": "saaaa",
             "url": "sdfsd/sdfssfe"
         },
         {
-            "id": 3,
             "name": "saaaaee",
             "url": "sdfsd/sdfssfe"
         },
         {
-            "id": 4,
             "name": "bbbb",
             "url": "sdfsd/sdfssfe"
         }
@@ -34,7 +30,6 @@
     "useSnapshot": false,
     "virtualApps": [
         {
-            "id": 1,
             "name": "sdfsdf",
             "baseURL": "http://sdfsd/sdfs",
             "connectStringRead": "wer",
@@ -45,7 +40,6 @@
             "popAccountName": "wer"
         },
         {
-            "id": 2,
             "name": "saaaa",
             "baseURL": "http://sdfsd/sdfssfe",
             "connectStringRead": "wer",
@@ -56,7 +50,6 @@
             "popAccountName": "wer"
         },
         {
-            "id": 3,
             "name": "saaaaee",
             "baseURL": "http://sdfsd/sdfssfe",
             "connectStringRead": "wer",
@@ -67,7 +60,6 @@
             "popAccountName": "wer"
         },
         {
-            "id": 4,
             "name": "bbbb",
             "baseURL": "http://sdfsd/sdfssfe",
             "connectStringRead": "wer",
