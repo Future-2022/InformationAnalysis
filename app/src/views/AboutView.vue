@@ -1,13 +1,5 @@
 <template>
 <div>
-  <div class='text-right'>
-    <v-btn
-      class='bluedark-btn'          
-      @click="export_newJson()"
-    >
-      Export JSON
-    </v-btn>
-  </div>
   <div class='text-left pt-5'>
     <div class='d-flex'>
       <v-icon
@@ -62,7 +54,7 @@
       <template v-slot:[`item.setting`]="{ item }">
         <div class=''>
           <v-btn
-            @click="edit_item(item.id)"
+            @click="edit_item(item.name)"
             class='my-2 blue-btn w-50'
             block
           >
@@ -71,14 +63,14 @@
           <v-btn
             block  
             class='black-btn w-50'          
-            @click="copy_item(item.id)"
+            @click="copy_item(item.name)"
           >
             copy
           </v-btn>
           <v-btn
             block  
             class='red-btn w-50 mt-2'          
-            @click="delete_item(item.id)"
+            @click="delete_item(item.name)"
           >
             delete
           </v-btn>
@@ -112,15 +104,15 @@ import axios from 'axios';
         alert("New JSON file is successfully created!");
       })
     },
-    edit_item(id) {
-      window.location.href = '#/edit/' + id;
+    edit_item(name) {
+      window.location.href = '#/edit/' + name;
     },
-    copy_item(id) {
-      window.location.href = '#/copy/' + id;
+    copy_item(name) {
+      window.location.href = '#/copy/' + name;
     },
-    delete_item(id) {
+    delete_item(name) {
       const sendingData = { 
-          id:id 
+          name:name 
       };
       axios
       .post("http://localhost:5000/api/users/deleteItem/", sendingData)
@@ -138,7 +130,6 @@ import axios from 'axios';
         search1: '',
         headers1: [          
           { text: 'Setting', value: 'setting', sortable: false, },
-          { text: 'ID', value: 'id', sortable: false, },
           {
             text: 'User Name',
             align: 'start',
@@ -154,7 +145,6 @@ import axios from 'axios';
           { text: 'Account', value: 'popAccountName', sortable: false},
         ],
         headers2: [
-          { text: 'ID', value: 'id', sortable: false, },
           {
             text: 'User Name',
             align: 'start',

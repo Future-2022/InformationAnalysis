@@ -126,7 +126,8 @@ export default {
       accountName: '',
       nameRules: [
         v => !!v || 'Name is required',
-        v => (v && v.length <= 10) || 'Name Contains must be less than 10 characters',
+        v => this.nameConfirm(v) !== false || 'Name contains is not unique.',
+        v => (v && v.length <= 10) || 'Name Contains must be less than 10 characters',   
         v => v.indexOf(' ') < 0 || 'Name Contains white space.',
       ],
       emailRules: [
@@ -157,7 +158,6 @@ export default {
       // ],
       publisherRules: [
         v => !!v || 'Publisher is required',
-        v => this.publisherConfirm(v) !== false || 'Publisher contains is not unique.',
         v => v.indexOf(' ') < 0 || 'Publisher Contains white space.',
       ],
       accountRules: [
@@ -192,7 +192,7 @@ export default {
     setAccountName(event) {
       this.accountName = event.target.value;
     },
-    publisherConfirm(v) {
+    nameConfirm(v) {
       console.log(v)
       // let temp = this.desserts.map((item) => {
       //   if(item.defaultPublisher === v) {
@@ -200,15 +200,15 @@ export default {
       //     return false;
       //   }
       // });
-      this.boolPublisher = true;
+      this.name = true;
       for (var i  = 0; i <this.desserts.length; i++) {
-        console.log(this.desserts[i].defaultPublisher)
-        if(this.desserts[i].defaultPublisher === v) {
-          this.boolPublisher = false;
+        console.log(this.desserts[i].name)
+        if(this.desserts[i].name === v) {
+          this.name = false;
           break;
         }
       }
-      return this.boolPublisher;
+      return this.name;
     },
     async inputData() {
     console.log('start');

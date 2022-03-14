@@ -98,7 +98,7 @@ import axios from 'axios';
   export default {
     mounted(){
       const sendingData = { 
-          id: this.$route.params.id
+          name: this.$route.params.name
       };
       axios
       .post("http://localhost:5000/api/users/getInfoById", sendingData)
@@ -136,8 +136,7 @@ import axios from 'axios';
     async edit_item() {
       if(this.valid === true) {
           const sendingData = { 
-              id: this.$route.params.id,
-              name: this.userName, 
+              name: this.$route.params.name, 
               url: this.userUrl, 
               stringRead: this.stringRead, 
               stringUpdate: this.stringUpdate, 
@@ -177,7 +176,7 @@ import axios from 'axios';
       this.boolPublisher = true;
       for (var i  = 0; i <this.desserts.length; i++) {
         console.log(this.desserts[i].defaultPublisher)
-        if(i != this.$route.params.id - 1) {         
+        if(i != this.$route.params.name - 1) {         
         
           if(this.desserts[i].defaultPublisher === v) {
             this.boolPublisher = false;
@@ -186,6 +185,26 @@ import axios from 'axios';
         }
       }
       return this.boolPublisher;
+    },
+    nameConfirm(v) {
+      console.log(v)
+      // let temp = this.desserts.map((item) => {
+      //   if(item.defaultPublisher === v) {
+      //     this.boolPublisher = false;
+      //     return false;
+      //   }
+      // });
+      this.name = true;
+      for (var i  = 0; i <this.desserts.length; i++) {
+        console.log(this.desserts[i].name)
+        if(this.desserts[i].name != this.$route.params.name) {
+          if(this.desserts[i].name === v) {
+            this.name = false;
+            break;
+          }
+        }
+      }
+      return this.name;
     },
     cancel() {
       window.location.href = '#/about';
@@ -233,7 +252,9 @@ import axios from 'axios';
         desserts: [],
         nameRules: [
         v => !!v || 'Name is required',
-        v => (v && v.length <= 10) || 'Name Contains must be less than 10 characters',
+        v => this.nameConfirm(v) !== false || 'Name contains is not unique.',
+        v => v === this.$route.params.name || 'Name could not be changed..',
+        v => (v && v.length <= 10) || 'Name Contains must be less than 10 characters',   
         v => v.indexOf(' ') < 0 || 'Name Contains white space.',
       ],
       emailRules: [
@@ -264,7 +285,6 @@ import axios from 'axios';
       // ],
       publisherRules: [
         v => !!v || 'Publisher is required',
-        v => this.publisherConfirm(v) !== false || 'Publisher contains is not unique.',
         v => v.indexOf(' ') < 0 || 'Publisher Contains white space.',
       ],
       accountRules: [
