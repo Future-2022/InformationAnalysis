@@ -19,7 +19,6 @@
         v-model="userName"
         :rules="nameRules"
         label="User Name"
-        value="False"
         required
       ></v-text-field>
 
@@ -100,6 +99,7 @@ import axios from 'axios';
       const sendingData = { 
           name: this.$route.params.name
       };
+      alert('f');
       axios
       .post("http://localhost:5000/api/users/getInfoById", sendingData)
       .then((response)=>
