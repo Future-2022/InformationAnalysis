@@ -60,16 +60,29 @@ router.post(
           
     try {
       for (var i = 0; i < configJson.virtualApps.length; i++) {
-        if(configJson.virtualApps[i].name == name) {          
-          configJson.virtualApps[i].baseURL = 'http://'+url+'/';
-          configJson.virtualApps[i].defaultFromAddress = address;
-          configJson.virtualApps[i].connectStringRead = stringRead;
-          configJson.virtualApps[i].connectStringReport = stringUpdate;
-          configJson.virtualApps[i].stringReport = stringReport;
-          configJson.virtualApps[i].defaultPublisher = publisher;
-          configJson.virtualApps[i].popAccountName = accountName;
+        if(configJson.virtualApps[i].name == name) {  
+          if(url.substring(url.length -1) == '/') {
+            
+              configJson.virtualApps[i].baseURL = 'http://' + url;
+              configJson.virtualApps[i].connectStringRead = stringRead;
+              configJson.virtualApps[i].connectStringUpdate = stringUpdate;
+              configJson.virtualApps[i].connectStringReport = stringReport;
+              configJson.virtualApps[i].defaultFromAddress = address;
+              configJson.virtualApps[i].defaultPublisher = publisher;
+              configJson.virtualApps[i].popAccountName = accountName;
+          }
+          else { 
+            configJson.virtualApps[i].baseURL = 'http://'+url+'/';
+            configJson.virtualApps[i].defaultFromAddress = address;
+            configJson.virtualApps[i].connectStringRead = stringRead;
+            configJson.virtualApps[i].connectStringReport = stringUpdate;
+            configJson.virtualApps[i].stringReport = stringReport;
+            configJson.virtualApps[i].defaultPublisher = publisher;
+            configJson.virtualApps[i].popAccountName = accountName;
+          }
           break;
         }
+        
       }
       for (var i = 0; i < configJson.urlScreen.length; i++) {
         if(configJson.urlScreen[i].name == name) {          
@@ -154,7 +167,6 @@ router.post(
   async (req, res) => {
     const { name } = req.body;
     try {
-      console.log('--name', name);
       const selItem = configJson.virtualApps.find(x => x.name == name);
       res.send({'selItem': selItem});
     } catch (err) {
