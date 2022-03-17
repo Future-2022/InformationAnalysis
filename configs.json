@@ -7,20 +7,8 @@
     "encryptIV": "85bae29f-cc42-4363-8e8d-78804a482614",
     "urlScreen": [
         {
-            "name": "fdsfsd",
-            "url": "werwe/werwe"
-        },
-        {
-            "name": "fdsfs",
-            "url": "234/235234/"
-        },
-        {
-            "name": "fdsfsg",
-            "url": "eeeeeeee/rrrrrr/"
-        },
-        {
-            "name": "dddddddd",
-            "url": "eeeeeeee/rrrrrr/"
+            "name": "sdf",
+            "url": "wer"
         }
     ],
     "connectStringCommon": "SERVER=10.0.1.7;DATABASE=CommonData;User ID=AppVault;Password=appvault;",
@@ -30,44 +18,14 @@
     "useSnapshot": false,
     "virtualApps": [
         {
-            "name": "fdsfsd",
-            "baseURL": "http://werwe/werwe/",
-            "connectStringRead": "sfwer",
-            "connectStringUpdate": "sfwer",
-            "connectStringReport": "ergfdg",
-            "defaultFromAddress": "werw@fsdf.wer",
-            "defaultPublisher": "sdfwerw",
-            "popAccountName": "gfsgfdg"
-        },
-        {
-            "name": "fdsfs",
-            "baseURL": "http://234/235234/",
-            "connectStringRead": "sfwer",
-            "connectStringUpdate": "sfwer",
-            "connectStringReport": "ergfdg",
-            "defaultFromAddress": "werw@fsdf.wer",
-            "defaultPublisher": "sdfwerw",
-            "popAccountName": "gfsgfdg"
-        },
-        {
-            "name": "fdsfsg",
-            "baseURL": "http://eeeeeeee/rrrrrr/",
-            "connectStringRead": "aaaaaaaaa",
-            "connectStringUpdate": "sfwer",
-            "connectStringReport": "ergfdg",
-            "defaultFromAddress": "werw@fsdf.wer",
-            "defaultPublisher": "sdfwerw",
-            "popAccountName": "gfsgfdg"
-        },
-        {
-            "name": "dddddddd",
-            "baseURL": "http://eeeeeeee/rrrrrr/",
-            "connectStringRead": "aaaaaaaaa",
-            "connectStringUpdate": "sfwer",
-            "connectStringReport": "ergfdg",
-            "defaultFromAddress": "werw@fsdf.wer",
-            "defaultPublisher": "sdfwerw",
-            "popAccountName": "gfsgfdg"
+            "name": "sdf",
+            "baseURL": "http://wer/",
+            "connectStringRead": "sfd",
+            "connectStringUpdate": "wer",
+            "connectStringReport": "wer",
+            "defaultFromAddress": "sfd@fsd.wer",
+            "defaultPublisher": "wfdsf",
+            "popAccountName": "wer"
         }
     ]
 }

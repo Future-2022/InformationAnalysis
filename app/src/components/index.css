@@ -12,9 +12,13 @@
   width: 800px;
   display: inline-block;
 }
-.text-red {
-  
-}
+/* .error {
+  color: red;
+  text-align: left;
+  font-size: 12px;
+  position: relative;
+  bottom: 20px;
+} */
 .text-warnings {
   color: rgb(255, 102, 0);
 }
@@ -62,10 +66,12 @@ thead {
 .blue-btn {
   background-color:rgba(40, 153, 228, 0.829)!important;
   color: white!important;
+  text-transform: none!important;
 }
 .red-btn {
   background-color:rgba(226, 77, 19, 0.829)!important;
   color: white!important;
+  text-transform: none!important;
 }
 .black-btn {
   background-color: rgb(68, 68, 68)!important;
@@ -77,6 +83,7 @@ thead {
   background-color: white!important;
   /* font-weight: bold; */
   text-transform: none!important;
+
 }
 .bluedark-btn {
   background-color: rgb(55 114 192)!important;

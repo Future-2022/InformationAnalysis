@@ -99,7 +99,6 @@ import axios from 'axios';
       const sendingData = { 
           name: this.$route.params.name
       };
-      alert('f');
       axios
       .post("http://localhost:5000/api/users/getInfoById", sendingData)
       .then((response)=>
@@ -134,9 +133,11 @@ import axios from 'axios';
     //     value.toString().toLocaleUpperCase().indexOf(search) !== -1
     // },
     async edit_item() {
-      if(this.valid === true) {
+      if(this.userName == this.$route.params.name) {
+        alert("Name is not unique");
+      }
+      else if(this.valid === true) {
           const sendingData = { 
-              id: this.$route.params.id,
               name: this.userName, 
               url: this.userUrl, 
               stringRead: this.stringRead, 

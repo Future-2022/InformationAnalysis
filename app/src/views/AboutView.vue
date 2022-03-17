@@ -58,21 +58,21 @@
             class='my-2 blue-btn w-50'
             block
           >
-            edit
+            Edit
           </v-btn>
           <v-btn
             block  
             class='black-btn w-50'          
             @click="copy_item(item.name)"
           >
-            copy
+            Copy
           </v-btn>
           <v-btn
             block  
             class='red-btn w-50 mt-2'          
             @click="delete_item(item.name)"
           >
-            delete
+            Delete
           </v-btn>
         </div>
       </template>
