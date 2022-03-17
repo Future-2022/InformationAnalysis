@@ -9,6 +9,18 @@
         {
             "name": "sdf",
             "url": "wer"
+        },
+        {
+            "name": "sdfff",
+            "url": "wer/ere"
+        },
+        {
+            "name": "sdffffsdf",
+            "url": "wer/ere/"
+        },
+        {
+            "name": "sdffffsdfd",
+            "url": "wer/ere/"
         }
     ],
     "connectStringCommon": "SERVER=10.0.1.7;DATABASE=CommonData;User ID=AppVault;Password=appvault;",
@@ -20,6 +32,36 @@
         {
             "name": "sdf",
             "baseURL": "http://wer/",
+            "connectStringRead": "sfd",
+            "connectStringUpdate": "wer",
+            "connectStringReport": "wer",
+            "defaultFromAddress": "sfd@fsd.wer",
+            "defaultPublisher": "wfdsf",
+            "popAccountName": "wer"
+        },
+        {
+            "name": "sdfff",
+            "baseURL": "http://wer/ere/",
+            "connectStringRead": "sfd",
+            "connectStringUpdate": "wer",
+            "connectStringReport": "wer",
+            "defaultFromAddress": "sfd@fsd.wer",
+            "defaultPublisher": "wfdsf",
+            "popAccountName": "wer"
+        },
+        {
+            "name": "sdffffsdf",
+            "baseURL": "http://wer/ere/",
+            "connectStringRead": "sfd",
+            "connectStringUpdate": "wer",
+            "connectStringReport": "wer",
+            "defaultFromAddress": "sfd@fsd.wer",
+            "defaultPublisher": "wfdsf",
+            "popAccountName": "wer"
+        },
+        {
+            "name": "sdffffsdfd",
+            "baseURL": "http://wer/ere/",
             "connectStringRead": "sfd",
             "connectStringUpdate": "wer",
             "connectStringReport": "wer",

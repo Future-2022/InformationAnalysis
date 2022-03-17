@@ -134,7 +134,8 @@ import axios from 'axios';
     // },
     async edit_item() {
       if(this.userName == this.$route.params.name) {
-        alert("Name is not unique");
+        // alert("Name is not unique");
+        
       }
       else if(this.valid === true) {
           const sendingData = { 
