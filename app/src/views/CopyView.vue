@@ -134,6 +134,7 @@ import axios from 'axios';
     // },
     async edit_item() {
       if(this.userName == this.$route.params.name) {
+        
         // alert("Name is not unique");
         
       }

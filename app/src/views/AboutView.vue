@@ -33,7 +33,9 @@
           normal
           class='text-icon2 align-self-center px-3'
         >
+
           mdi-email
+          
         </v-icon>
         <h5 class='text-blue info-text pb-0 mb-0 align-self-center'>User Virtual Apps Data Information by Using Vue js.</h5>
     </div>
