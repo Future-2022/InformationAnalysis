@@ -60,7 +60,9 @@
             class='my-2 blue-btn w-50'
             block
           >
+
             Edit
+            
           </v-btn>
           <v-btn
             block  

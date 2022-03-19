@@ -69,8 +69,7 @@
         :rules="accountRules"
         label="Account Name"
         required
-      ></v-text-field>
-      
+      ></v-text-field>  
       
 
       <v-btn
